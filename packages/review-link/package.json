@@ -51,7 +51,7 @@
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc -p tsconfig.json",
     "test": "node --test \"test/*.test.ts\"",
-    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+    "prepublishOnly": "tsc -p tsconfig.json && node --test \"test/*.test.ts\" && tsc -p tsconfig.build.json"
   },
   "peerDependencies": {
     "emdash": ">=1.5.0 <2"
