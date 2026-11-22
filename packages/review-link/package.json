@@ -12,7 +12,10 @@
     "astro"
   ],
   "license": "MIT",
-  "author": "Borislav Hristov",
+  "author": {
+    "name": "Borislav Hristov",
+    "url": "https://europe4u.online"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BorislavHr/emdash-plugins.git",
