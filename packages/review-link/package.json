@@ -1,0 +1,59 @@
+{
+  "name": "@borislavhr/emdash-plugin-review-link",
+  "version": "1.0.0",
+  "description": "EmDash CMS plugin: a private link to a draft that works for days, for reviewers without an admin account.",
+  "keywords": [
+    "emdash",
+    "emdash-plugin",
+    "cms",
+    "preview",
+    "review",
+    "draft",
+    "astro"
+  ],
+  "license": "MIT",
+  "author": "Borislav Hristov",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BorislavHr/emdash-plugins.git",
+    "directory": "packages/review-link"
+  },
+  "homepage": "https://github.com/BorislavHr/emdash-plugins/tree/main/packages/review-link#readme",
+  "bugs": "https://github.com/BorislavHr/emdash-plugins/issues",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./plugin": {
+      "types": "./dist/plugin.d.ts",
+      "default": "./dist/plugin.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "node --test \"test/*.test.ts\"",
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+  },
+  "peerDependencies": {
+    "emdash": ">=1.5.0 <2"
+  },
+  "devDependencies": {
+    "emdash": "1.5.0"
+  }
+}

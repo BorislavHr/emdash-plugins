@@ -1,0 +1,13 @@
+packages:
+  - packages/*
+
+# Supply-chain hardening: wait a day before using a brand-new release, and only take
+# dependencies from the registry.
+minimumReleaseAge: 1440
+blockExoticSubdeps: true
+
+# Only these packages may run install scripts (EmDash's dev dependency brings them in).
+allowBuilds:
+  esbuild: true
+  workerd: true
+  sharp: false
